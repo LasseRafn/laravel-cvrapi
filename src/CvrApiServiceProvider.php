@@ -16,8 +16,7 @@ class CvrApiServiceProvider extends ServiceProvider
 	 */
 	public function boot()
 	{
-		$this->publishes( [
-			__DIR__ . '/config/cvrapi.php' => config_path( 'cvrapi.php' )
-		] );
+		$configPath = __DIR__ . '/../config/cvrapi.php';
+		$this->mergeConfigFrom($configPath, 'cvrapi');
 	}
 }
