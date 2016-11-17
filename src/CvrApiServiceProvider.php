@@ -20,15 +20,4 @@ class CvrApiServiceProvider extends ServiceProvider
 			__DIR__ . '/config/cvrapi.php' => config_path( 'cvrapi.php' )
 		] );
 	}
-
-	/**
-	 * Register
-	 */
-	public function register()
-	{
-		$this->app->bind( 'cvrapi', function ( $app )
-		{
-			return new CvrApi( $app );
-		} );
-	}
 }
