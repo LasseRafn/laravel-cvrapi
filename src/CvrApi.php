@@ -23,7 +23,7 @@ class CvrApi
 	{
 		$response = $this->request->get($query, $country);
 
-		// todo throw error..
+		// todo throw error if... has error...
 
 		return new Business($response);
 	}

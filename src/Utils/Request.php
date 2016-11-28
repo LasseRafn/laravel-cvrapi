@@ -12,7 +12,10 @@ class Request
 	public function __construct( $baseUri = '' )
 	{
 		$this->curl = new Client( [
-			'base_uri' => $baseUri
+			'base_uri' => $baseUri,
+		    'headers' => [
+			    'User-Agent' => config('cvrapi.your_business')
+		    ]
 		] );
 	}
 
