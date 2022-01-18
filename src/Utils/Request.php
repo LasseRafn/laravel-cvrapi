@@ -24,6 +24,11 @@ class Request
 		try
 		{
 			$url      = config( 'cvrapi.endpoint' ) . "?search={$query}&country={$country}";
+			
+			if(!empty($token = config('cvrapi.token'))) {
+				$url .= "&token=" . $token;	
+			}
+			
 			$response = $this->curl->get( $url );
 
 			return json_decode( $response->getBody() );
